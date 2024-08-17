@@ -1,0 +1,385 @@
+body{
+    margin: 0px;
+    padding:0px;
+    /* background-color: black; */
+    background-image: linear-gradient(to right bottom,rgb(94, 101, 182),black,rgb(97, 97, 195));
+    background-attachment: fixed;
+    background-size: cover; 
+}
+
+#title-bar{
+    margin-top: 10px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* --------------------title-content-for-gametitle-marvel-image-------------------------------- */
+#title-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 360px;
+    margin-top: 60px;
+}
+/* -------------------game-title---------------------------------- */
+#game-title{
+    color: white;
+    font-size: 50px;
+}
+/* ------------------marvel-bakcground------------------------- */
+#marvel{
+    font-size:85px;
+    z-index: -1;
+    opacity: 0.6;
+    color: rgb(212, 9, 9);
+}
+/* --------------------spider-man-image------------------------ */
+#img-div{
+    margin-top: -19px;
+    overflow: hidden;
+    height: 160px;
+}
+#img-div img{
+    margin-top: -120px;
+    position: relative;
+    width: 120px;
+    height:160px;
+    animation: move 1.6s forwards;
+    animation-direction: initial;
+}
+@keyframes move{
+    0%{top:0px}
+    100%{top:120px}
+}
+#my-fav-btn{
+    position: relative;
+    border: 0px;
+    border-radius: 6px;
+    width: 200px;
+    padding: 10px;
+    background-color: rgb(169, 8, 8);
+    top: -300px;
+    left:280%;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+/* -----------------search-box-section------------------------ */
+#search{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fedin 1.5s;
+}
+@keyframes fedin{
+    0%{transform: scale(0.5);};
+    100%{transform: scale(1.5);}
+}
+#search input{
+    width: 40%;
+    height:35px;
+    border: 0px;
+    margin: 5px;
+    border-radius: 6px;
+    color: rgb(2, 2, 2);
+    font-size: 20px;
+    opacity: 0.3;
+}
+#load{
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    color: white;
+}
+/* ------------------------------------Api-image-section----------------------------------- */
+#api-Image-fram{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid white; */
+}
+#images{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+    gap: 2rem;
+}
+.main-fram{
+    width:250px;
+    height: 400px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(221, 226, 249),rgb(164, 31, 246),rgb(7, 7, 15));
+    border-radius: 10px;  
+}
+/* -----------------------image-section------------------------------ */
+#img-fram{
+    width: 100%;
+    height:250px ;
+    border-radius: 10px;
+    transition: transform 1.5s; 
+}
+#img-fram:hover{
+    transform: scale(1.1);
+}
+/* -----------------------detail-section----------------- */
+#detail-div{
+    margin-top:6px;
+}
+.h-id{
+    color: white;
+    font-size: 20px;
+}
+.h-name{
+    color: white;
+    font-size: 20px;
+}
+.h-comics{
+    color: white;
+    font-size: 20px;
+}
+/* ---------------------add-button------------------------- */
+#btn-div{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.add-btn{
+    cursor: pointer;
+    background-color: rgb(239, 6, 6);
+    border-radius: 3px;
+    padding: 6px;
+    border: 0px;
+    color: rgb(251, 250, 250);
+    font-weight: 700;
+}  
+/* --------------------------media-query-for-914--------------------------- */
+@media only screen and  (max-width:914px){
+#title-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 360px;
+    margin-top:-37px;
+}
+#game-title{
+    color: white;
+    font-size:20px;
+    margin-left: -120px;
+}
+#marvel{
+    font-size:45px;
+    opacity: 0.5;
+}
+#search{
+    margin-top: -90px;
+}
+#search input{
+ width: 88%;
+}
+#load{
+    position: absolute;
+    top:90%;
+    left:35%;
+}
+#img-div{
+    margin-top: -10px;
+    overflow: hidden;
+    height: 160px;
+}
+#img-div img{
+    margin-top: -300px;
+    position: relative;
+    width:100px;
+    height:120px;
+    animation: move 1.6s forwards;
+    animation-direction: initial;
+}
+@keyframes move{
+0%{top:0px}
+100%{top:100px}
+}
+#my-fav-btn{
+position: relative;
+border: 0px;
+border-radius: 6px;
+width:70px;
+padding:6px;
+background-color: rgb(169, 8, 8);
+top: -270px;
+left:130px;
+color: white;
+font-size:8px;
+font-family: Arial, Helvetica, sans-serif;
+cursor: pointer;
+}
+/*----------------image-box-section------------ */
+  #images{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+.main-fram{
+    width:190px;
+    height:340px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(221, 226, 249),rgb(164, 31, 246),rgb(0, 0, 0));
+    border-radius: 10px;  
+}
+#img-fram{
+    width: 100%;
+    height:210px ;
+    border-radius: 10px;
+    transition: transform 1.5s; 
+}
+   /* ---------------------------detail------------------------- */
+#detail-div{
+    margin-top:6px;
+}
+.h-id{
+    color: white;
+    font-size:18px;
+}
+.h-name{
+    color: white;
+    font-size: 18px;
+}
+.h-comics{
+    color: white;
+    font-size:18px;
+}
+#btn-div{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.add-btn{
+    cursor: pointer;
+    background-color: rgb(211, 7, 7);
+    border-radius: 3px;
+    padding: 6px;
+    color: rgb(253, 252, 252);
+    font-weight: 700;
+}
+}
+/* --------------------------media-query-for-414--------------------------- */
+@media only screen and  (max-width:414px){
+    #title-content{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 360px;
+            margin-top:-37px;
+        }
+        #game-title{
+            color: white;
+            font-size:20px;
+            margin-left:-100px;
+        }
+        #marvel{
+            font-size:45px;
+            opacity: 0.5;
+        }
+        #search{
+            margin-top: -90px;
+        }
+        #search input{
+         width: 88%;
+        }
+        #load{
+            position: absolute;
+            top: 65%;
+            left:15%;
+        }
+        #img-div{
+            margin-top: -10px;
+            overflow: hidden;
+            height: 160px;
+        }
+        #img-div img{
+            margin-top: -300px;
+            position: relative;
+            width:100px;
+            height:120px;
+            animation: move 1.6s forwards;
+            animation-direction: initial;
+    }
+    @keyframes move{
+        0%{top:0px}
+        100%{top:100px}
+    }
+    #my-fav-btn{
+        position: relative;
+        border: 0px;
+        border-radius: 6px;
+        width:70px;
+        padding:6px;
+        background-color: rgb(169, 8, 8);
+        top: -270px;
+        left:120px;
+        color: white;
+        font-size:8px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+    }
+        /*----------------image-box-section------------ */
+        #images{
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(2,2fr);
+            gap: 1rem;
+        }
+        .main-fram{
+            width:160px;
+            height:320px;
+            padding: 10px;
+            background-image: linear-gradient(rgb(221, 226, 249),rgb(164, 31, 246),rgb(0, 0, 0));
+            border-radius: 10px;  
+        }
+        #img-fram{
+            width: 100%;
+            height:210px ;
+            border-radius: 10px;
+            transition: transform 1.5s; 
+        }
+        /* ---------------------------detail------------------------- */
+        #detail-div{
+            margin-top:6px;
+        }
+        .h-id{
+            color: white;
+            font-size: 15px;
+        }
+        .h-name{
+            color: white;
+            font-size: 15px;
+        }
+        .h-comics{
+            color: white;
+            font-size: 15px;
+        }
+        /* --------------add-button------------------------------ */
+         #btn-div{
+            margin-top:15px;
+            display: flex;
+            justify-content: center;
+        }
+        .add-btn{
+            cursor: pointer;
+            background-color: rgb(211, 7, 7);
+            border: 0px ;
+            border-radius: 3px;
+            padding: 6px;
+            color: rgb(249, 247, 247);
+            font-weight: 700;
+        }
+    
+    }
