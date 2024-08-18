@@ -370,7 +370,7 @@ cursor: pointer;
          #btn-div{
             margin-top:15px;
             display: flex;
-            justify-content: center;
+            justify-content:space-around;
         }
         .add-btn{
             cursor: pointer;
