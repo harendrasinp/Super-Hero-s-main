@@ -93,8 +93,10 @@ body{
 #load{
     position: absolute;
     top: 75%;
-    left: 40%;
-    color: white;
+    left:35%;
+    color: rgb(151, 147, 147);
+    font-size:25px;
+    font-weight: 700;
 }
 /* ------------------------------------Api-image-section----------------------------------- */
 #api-Image-fram{
@@ -297,7 +299,9 @@ cursor: pointer;
         #load{
             position: absolute;
             top: 65%;
-            left:15%;
+            left:10%;
+            font-size:19px;
+            font-weight: 700;
         }
         #img-div{
             margin-top: -10px;
