@@ -146,7 +146,7 @@ body{
 #btn-div{
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
 }
 .add-btn{
     cursor: pointer;
