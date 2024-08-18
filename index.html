@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Super Heros Hunter</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!------------------------------heaer------------------------------->
+    <!------------------------------heaer------------------------------->
     <div id="title-bar">
         <div id="title-content">
-        <!-----------Super Hero Title name-and marvel big font---------------->
-            <div id="game-title">SUPER HERO'S HUNTER</div>                                                      
+            <!-----------Super Hero Title name-and marvel big font---------------->
+            <div id="game-title">SUPER HERO'S HUNTER</div>
             <div id="marvel">MARVEL</div>
-        <!-----------Spider man animated Image------------->
+            <!-----------Spider man animated Image------------->
             <div id="img-div">
                 <img src="images/spider-man.png" alt="super-hero-image">
             </div>
         </div>
-    <!-- --------------My Favourite Navigation Button---- -->
+        <!-- --------------My Favourite Navigation Button---- -->
         <a href="/Favourite.html" id="fav-link"><button id="my-fav-btn">My Favourites</button></a>
     </div>
-<!------------------------------search box------------------------------>
-        <div id="search">
-            <input type="text" id="user-input" placeholder="Search you Hero's">
+    <!------------------------------search box------------------------------>
+    <div id="search">
+        <input type="text" id="user-input" placeholder="Search you Hero's">
+    </div>
+    <!-----------------------------Api fetch data Section----------------------------->
+    <div id="api-Image-fram">
+        <div id="images">
+            <!-- here data Injecting from javascript -->
         </div>
-<!-----------------------------Api fetch data Section----------------------------->
-        <div id="api-Image-fram">
-          <div id="images">
-              <!-- here data Injecting from javascript -->
-            </div>
-        </div>
-        <div id="load">Please Wait your data is Loading.   .   .    .   .   .</div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-        <script src="index.js"></script>
-    </body>
-    </html>
+    </div>
+    <!--------------------------Loading data Message-------------------------->
+    <div id="load">Please Wait your data is Loading. . . . . .</div>
+    <!-------------------------------------------------------------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

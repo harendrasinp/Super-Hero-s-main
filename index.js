@@ -1,8 +1,12 @@
+// Html Element fetching by DOM
 const userInput = document.querySelector("#user-input");
 const btn = document.querySelector("#btn");
 const imgesection = document.querySelector("#images");
 const dtLoading = document.querySelector("#load");
+
+// variable for API where it store fetch Data
 let heros;
+// initialy loading message is not getting Displayed till no text inside the search box
 dtLoading.style.display = "none";
 // -----------------------timestamp-------------------------------------
 let ts = Date.now().toString();
@@ -11,18 +15,28 @@ let privateKey = "13a37d9ec1a99a33d7f4cb7424b61d040c0b2134";
 let publicKey = "e40adcdc6765246a7a4bd76aa8be2b03";
 // --------------------------md5 digest value-----------------------------
 let hashvalue = CryptoJS.MD5(ts + privateKey + publicKey).toString();
-// -----------------------------------------debounce-function---------------------------------
+
+// -----------------debounce-function------------------------------------
+//debounce function have parameter like
+// func-callServer function
+// tm- 500milisecond
+// fn-load function
 function debounce(func, tm, fn) {
   let timeOutId;
+  // debounnce function return function which calls CallServer after 500 milisecond
   return function (...args) {
+    // load function call after geting text in serach box
     fn();
+    //on hiting every charecter it clear the Settimeout function and stuck to run callServer function 
     clearTimeout(timeOutId);
+    // after 500 milisecond delay of typing setTimeOut function runse
     timeOutId = setTimeout(() => {
       func(...args);
-      console.log(func);
     }, tm);
   };
 };
+// CallServer function called by debounce function
+// callServer function Fetch's API data 
 async function callServer() {
   imgesection.textContent = ``;
   const inputData = userInput.value;
@@ -36,6 +50,8 @@ async function callServer() {
   loopfunction(heros);
   dtLoading.style.display = "none";
 };
+// when search box have input it will all debounce function with parameter
+// callServer function, load function and time;
 userInput.addEventListener("input", debounce(callServer, 500, load));
 
 function load() {
@@ -56,22 +72,22 @@ function loopfunction(heros) {
                           <div id="btn-div">
                             <button type="submit" class="add-btn" id="detail-view" heroPass=${element["id"]}>Detail</button>
                             <button type="submit" class="add-btn" id="add-fav" heroPass=${element["id"]}>Add to Favourite</button>
-                          </div>`                  
+                          </div>`
     imgesection.appendChild(mainFram);
     const hBtn = mainFram.querySelector("#add-fav");
     hBtn.addEventListener("click", () => {
-      hBtn.style.backgroundColor ="black";
+      hBtn.style.backgroundColor = "black";
       hBtn.style.border = "1px solid red"
       hBtn.style.color = "red";
       btnFunnction(hBtn);
       hBtn.innerHTML = "Added Succesfully"
     });
-  const detailBtn = mainFram.querySelector("#detail-view");
-    function loadData(){
-      const opnwindow=window.open("detail.html");
-      opnwindow.onload=function(){
-        const detailData=opnwindow.document.getElementById("herosDetail");
-        detailData.innerHTML=`<div id="imgage-box">
+    const detailBtn = mainFram.querySelector("#detail-view");
+    function loadData() {
+      const opnwindow = window.open("detail.html");
+      opnwindow.onload = function () {
+        const detailData = opnwindow.document.getElementById("herosDetail");
+        detailData.innerHTML = `<div id="imgage-box">
                                 <div id="image">
                                 <img src="${element["thumbnail"].path}.${element["thumbnail"].extension}"id="img-fram">
                                 </div>
@@ -89,8 +105,8 @@ function loopfunction(heros) {
                               </div>`
       }
     }
-    detailBtn.addEventListener("click",loadData);
-    detailBtn.addEventListener("touchstart",loadData);
+    detailBtn.addEventListener("click", loadData);
+    detailBtn.addEventListener("touchstart", loadData);
   });
 };
 // -------------------------hero-name size-reduce-function-----------------------------------
@@ -113,8 +129,8 @@ function localStorageFunction(ele) {
   localStorage.setItem(eleId, JSON.stringify(ele));
 }
 
-function dicCheck(disc){
-  if(!disc){
+function dicCheck(disc) {
+  if (!disc) {
     return "No Discription";
   }
   return disc;
