@@ -54,13 +54,13 @@ function loopfunction(heros) {
                             <div class="h-comics">Comics: ${element["comics"].available}</div>
                           </div>
                           <div id="btn-div">
-                            <button type="submit" class="add-btn" id="detail-view" heroPass=${element["id"]}> View Detail</button>
+                            <button type="submit" class="add-btn" id="detail-view" heroPass=${element["id"]}>Detail</button>
                             <button type="submit" class="add-btn" id="add-fav" heroPass=${element["id"]}>Add to Favourite</button>
                           </div>`                  
     imgesection.appendChild(mainFram);
     const hBtn = mainFram.querySelector("#add-fav");
     hBtn.addEventListener("click", () => {
-      hBtn.style.backgroundColor = "black";
+      hBtn.style.backgroundColor ="black";
       hBtn.style.border = "1px solid red"
       hBtn.style.color = "red";
       btnFunnction(hBtn);
