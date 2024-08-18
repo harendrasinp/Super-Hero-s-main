@@ -2,7 +2,7 @@ const userInput = document.querySelector("#user-input");
 const btn = document.querySelector("#btn");
 const imgesection = document.querySelector("#images");
 const dtLoading = document.querySelector("#load");
-
+let heros;
 dtLoading.style.display = "none";
 // -----------------------timestamp-------------------------------------
 let ts = Date.now().toString();
@@ -66,11 +66,36 @@ function loopfunction(heros) {
       btnFunnction(hBtn);
       hBtn.innerHTML = "Added Succesfully"
     });
+  const detailBtn = mainFram.querySelector("#detail-view");
+    function loadData(){
+      const opnwindow=window.open("detail.html");
+      opnwindow.onload=function(){
+        const detailData=opnwindow.document.getElementById("herosDetail");
+        detailData.innerHTML=`<div id="imgage-box">
+                                <div id="image">
+                                <img src="${element["thumbnail"].path}.${element["thumbnail"].extension}"id="img-fram">
+                                </div>
+                              </div>
+                              <div id="detail-box">
+                                <div id="all-detail">
+                                  <div id="hid" class="all">Id: ${element["id"]}</div>
+                                  <div id="hName" class="all">Name: ${element["name"]}</div>
+                                  <div id="hcomic" class="all">Comics: ${element["comics"].available}</div>
+                                  <div id="disc" class="all">
+                                    <label>Discription:</label>
+                                    <div id="detail">${dicCheck(element["description"])}</div>
+                                  </div>
+                                </div>
+                              </div>`
+      }
+    }
+    detailBtn.addEventListener("click",loadData);
+    detailBtn.addEventListener("touchstart",loadData);
   });
 };
 // -------------------------hero-name size-reduce-function-----------------------------------
 function nameSize(name) {
-  return result = name.substring(0, 12)
+  return name.substring(0, 12)
 }
 
 // ----------------------------click-function-on-btn---------------------------------
@@ -88,4 +113,9 @@ function localStorageFunction(ele) {
   localStorage.setItem(eleId, JSON.stringify(ele));
 }
 
-
+function dicCheck(disc){
+  if(!disc){
+    return "No Discription";
+  }
+  return disc;
+}
