@@ -86,7 +86,7 @@ body{
     }
     #detail{
         width:350px;
-        height:100px;
+        height:350px;
         overflow-y:auto;
     }
 
